@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Place an Order | Lotus Bites</title>
+
+    <meta name="description" content="Place your Lotus Bites order online. Choose your favourite sushi, noodles, combos, drinks and desserts.">
+
+    <meta name="keywords" content="Lotus Bites, sushi, noodles, food orders">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+
+            <a href="index.html">Lotus Bites</a>
+
+        </div>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="products.html">Menu</a></li>
+
+            <li><a href="enquiry.html" class="active">Order</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="page-heading">
+
+        <h1>Place Your Order</h1>
+
+        <p>Choose your favourite Lotus Bites meals and send us your order through WhatsApp.</p>
+
+    </section>
+
+    <section class="order-section">
+
+        <h2>Order Form</h2>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+
+                <label for="name">Full Name</label>
+
+                <input type="text" id="name" name="name"
+
+                       placeholder="Enter your full name" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="phone">Phone Number</label>
+
+                <input type="tel" id="phone" name="phone"
+
+                       placeholder="Enter your phone number" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="order">Select Your Order</label>
+
+                <select id="order" name="order" required>
+
+                    <option value="">Choose a menu item</option>
+
+                    <option value="Cucumber Roll - R25">Cucumber Roll - R25</option>
+
+                    <option value="Carrot & Avo Roll - R30">Carrot & Avo Roll - R30</option>
+
+                    <option value="Crab Stick Roll - R40">Crab Stick Roll - R40</option>
+
+                    <option value="Tuna Roll - R55">Tuna Roll - R55</option>
+
+                    <option value="Salmon Roll - R75">Salmon Roll - R75</option>
+
+                    <option value="Special Spicy Tuna Mayo Roll - R65">Special Spicy Tuna Mayo Roll - R65</option>
+
+                    <option value="Small Combo - R45">Small Combo - R45</option>
+
+                    <option value="Medium Combo - R90">Medium Combo - R90</option>
+
+                    <option value="Family Tray - R160">Family Tray - R160</option>
+
+                    <option value="Chicken Noodles - R45">Chicken Noodles - R45</option>
+
+                    <option value="Vegetable Noodles - R35">Vegetable Noodles - R35</option>
+
+                    <option value="Spicy Tuna Noodles - R55">Spicy Tuna Noodles - R55</option>
+
+                    <option value="Soft Drink - R15">Soft Drink - R15</option>
+
+                    <option value="Still Water - R12">Still Water - R12</option>
+
+                    <option value="Juice - R20">Juice - R20</option>
+
+                    <option value="Fortune Cookie - R10">Fortune Cookie - R10</option>
+
+                    <option value="Fortune Cookie Pack - R30">Fortune Cookie Pack - R30</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="quantity">Quantity</label>
+
+                <input type="number" id="quantity" name="quantity"
+
+                       min="1" value="1" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="address">Delivery Address</label>
+
+                <textarea id="address" name="address" rows="3"
+
+                          placeholder="Enter your delivery address" required></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="message">Additional Instructions (Optional)</label>
+
+                <textarea id="message" name="message" rows="3"
+
+                          placeholder="Any special requests?"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn">
+
+                Submit Order via WhatsApp
+
+            </button>
+
+            <p id="formFeedback" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>&copy; 2026 Lotus Bites. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const orderForm = document.getElementById("orderForm");
+
+    const feedback = document.getElementById("formFeedback");
+
+    // Lotus Bites WhatsApp business number
+
+    const whatsappNumber = "27679209522";
+
+    orderForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        if (!orderForm.checkValidity()) {
+
+            orderForm.reportValidity();
+
+            return;
+
+        }
+
+        const customerName = document.getElementById("name").value.trim();
+
+        const customerPhone = document.getElementById("phone").value.trim();
+
+        const selectedOrder = document.getElementById("order").value;
+
+        const quantity = document.getElementById("quantity").value;
+
+        const address = document.getElementById("address").value.trim();
+
+        const extraMessage = document.getElementById("message").value.trim();
+
+        const whatsappMessage =
+
+            "LOTUS BITES - NEW ORDER\n\n" +
+
+            "Customer Name: " + customerName + "\n" +
+
+            "Customer Phone: " + customerPhone + "\n" +
+
+            "Order: " + selectedOrder + "\n" +
+
+            "Quantity: " + quantity + "\n" +
+
+            "Delivery Address: " + address + "\n" +
+
+            "Additional Instructions: " +
+
+            (extraMessage || "None") + "\n\n" +
+
+            "Thank you!";
+
+        const whatsappURL =
+
+            "https://wa.me/" + whatsappNumber +
+
+            "?text=" + encodeURIComponent(whatsappMessage);
+
+        feedback.textContent = "Opening WhatsApp with your order details...";
+
+        window.location.href = whatsappURL;
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

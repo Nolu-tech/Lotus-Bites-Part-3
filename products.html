@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Menu | Lotus Bites</title>
+
+    <meta name="description" content="Explore the Lotus Bites menu featuring fresh sushi, delicious noodles, combo meals, refreshing drinks and desserts.">
+
+    <meta name="keywords" content="Lotus Bites, sushi, noodles, combos, drinks, desserts, food menu">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+
+            <a href="index.html">Lotus Bites</a>
+
+        </div>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="products.html" class="active">Menu</a></li>
+
+            <li><a href="enquiry.html">Order</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="page-heading">
+
+        <h1>Our Menu</h1>
+
+        <p>Discover your favourite flavours at Lotus Bites.</p>
+
+    </section>
+
+    <section class="menu-controls">
+
+        <input
+
+            type="search"
+
+            id="productSearch"
+
+            placeholder="Search for your favourite food"
+
+            aria-label="Search menu items"
+
+        >
+
+        <select id="categoryFilter" aria-label="Filter by category">
+
+            <option value="all">All Categories</option>
+
+            <option value="sushi">Sushi</option>
+
+            <option value="noodles">Noodles</option>
+
+            <option value="combos">Combos</option>
+
+            <option value="drinks">Drinks</option>
+
+            <option value="desserts">Desserts</option>
+
+        </select>
+
+        <select id="priceSort" aria-label="Sort by price">
+
+            <option value="default">Sort by Price</option>
+
+            <option value="low-high">Price: Low to High</option>
+
+            <option value="high-low">Price: High to Low</option>
+
+        </select>
+
+    </section>
+
+    <p id="productCount" aria-live="polite"></p>
+
+    <section class="product-grid" id="productGrid">
+
+        <article class="product-card" data-category="sushi" data-price="25">
+
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=500" alt="Fresh cucumber sushi roll">
+
+            <h3>Cucumber Roll</h3>
+
+            <p>Fresh cucumber wrapped in seasoned sushi rice and seaweed.</p>
+
+            <p class="price">R25</p>
+
+        </article>
+
+        <article class="product-card" data-category="sushi" data-price="30">
+
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500" alt="Carrot and avocado sushi roll">
+
+            <h3>Carrot &amp; Avo Roll</h3>
+
+            <p>A delicious combination of carrot and creamy avocado.</p>
+
+            <p class="price">R30</p>
+
+        </article>
+
+        <article class="product-card" data-category="sushi" data-price="40">
+
+            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500" alt="Crab stick sushi roll">
+
+            <h3>Crab Stick Roll</h3>
+
+            <p>A tasty sushi roll filled with crab stick.</p>
+
+            <p class="price">R40</p>
+
+        </article>
+
+        <article class="product-card" data-category="sushi" data-price="55">
+
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=500" alt="Tuna sushi roll">
+
+            <h3>Tuna Roll</h3>
+
+            <p>Fresh tuna prepared with seasoned sushi rice.</p>
+
+            <p class="price">R55</p>
+
+        </article>
+
+        <article class="product-card" data-category="sushi" data-price="75">
+
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500" alt="Salmon sushi roll">
+
+            <h3>Salmon Roll</h3>
+
+            <p>A flavourful salmon sushi favourite.</p>
+
+            <p class="price">R75</p>
+
+        </article>
+
+        <article class="product-card" data-category="sushi" data-price="65">
+
+            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500" alt="Spicy tuna mayo sushi roll">
+
+            <h3>Special Spicy Tuna Mayo Roll</h3>
+
+            <p>Tuna and creamy mayonnaise with a spicy flavour.</p>
+
+            <p class="price">R65</p>
+
+        </article>
+
+        <article class="product-card" data-category="combos" data-price="45">
+
+            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500" alt="Small sushi combo">
+
+            <h3>Small Combo</h3>
+
+            <p>A tasty selection of sushi for a light meal.</p>
+
+            <p class="price">R45</p>
+
+        </article>
+
+        <article class="product-card" data-category="combos" data-price="90">
+
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=500" alt="Medium sushi combo">
+
+            <h3>Medium Combo</h3>
+
+            <p>A satisfying selection of sushi favourites.</p>
+
+            <p class="price">R90</p>
+
+        </article>
+
+        <article class="product-card" data-category="combos" data-price="160">
+
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500" alt="Family sushi tray">
+
+            <h3>Family Tray</h3>
+
+            <p>A generous sushi selection made for sharing.</p>
+
+            <p class="price">R160</p>
+
+        </article>
+
+        <article class="product-card" data-category="noodles" data-price="45">
+
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500" alt="Chicken noodles">
+
+            <h3>Chicken Noodles</h3>
+
+            <p>Delicious noodles served with chicken.</p>
+
+            <p class="price">R45</p>
+
+        </article>
+
+        <article class="product-card" data-category="noodles" data-price="35">
+
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500" alt="Vegetable noodles">
+
+            <h3>Vegetable Noodles</h3>
+
+            <p>A tasty noodle dish with fresh vegetables.</p>
+
+            <p class="price">R35</p>
+
+        </article>
+
+        <article class="product-card" data-category="noodles" data-price="55">
+
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500" alt="Spicy tuna noodles">
+
+            <h3>Spicy Tuna Noodles</h3>
+
+            <p>Noodles with tuna and a delicious spicy flavour.</p>
+
+            <p class="price">R55</p>
+
+        </article>
+
+        <article class="product-card" data-category="drinks" data-price="15">
+
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500" alt="Refreshing soft drink">
+
+            <h3>Soft Drink</h3>
+
+            <p>A refreshing cold drink to enjoy with your meal.</p>
+
+            <p class="price">R15</p>
+
+        </article>
+
+        <article class="product-card" data-category="drinks" data-price="12">
+
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500" alt="Bottle of still water">
+
+            <h3>Still Water</h3>
+
+            <p>Refreshing bottled still water.</p>
+
+            <p class="price">R12</p>
+
+        </article>
+
+        <article class="product-card" data-category="drinks" data-price="20">
+
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500" alt="Fresh fruit juice">
+
+            <h3>Juice</h3>
+
+            <p>A refreshing fruity drink.</p>
+
+            <p class="price">R20</p>
+
+        </article>
+
+        <article class="product-card" data-category="desserts" data-price="10">
+
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500" alt="Fortune cookie">
+
+            <h3>Fortune Cookie</h3>
+
+            <p>A sweet little treat to finish your meal.</p>
+
+            <p class="price">R10</p>
+
+        </article>
+
+        <article class="product-card" data-category="desserts" data-price="30">
+
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500" alt="Pack of fortune cookies">
+
+            <h3>Fortune Cookie Pack</h3>
+
+            <p>A pack of fortune cookies to share.</p>
+
+            <p class="price">R30</p>
+
+        </article>
+
+    </section>
+
+    <p id="noResults" style="display:none;">
+
+        No menu items found. Please try another search or category.
+
+    </p>
+
+</main>
+
+<footer>
+
+    <p>&copy; 2026 Lotus Bites. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("productSearch");
+
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    const priceSort = document.getElementById("priceSort");
+
+    const productGrid = document.getElementById("productGrid");
+
+    const productCount = document.getElementById("productCount");
+
+    const noResults = document.getElementById("noResults");
+
+    const products = Array.from(
+
+        productGrid.querySelectorAll(".product-card")
+
+    );
+
+    function filterProducts() {
+
+        const searchText = searchInput.value.trim().toLowerCase();
+
+        const selectedCategory = categoryFilter.value.toLowerCase();
+
+        let visibleProducts = [];
+
+        products.forEach(function (product) {
+
+            const productName = product.textContent.toLowerCase();
+
+            const productCategory = product.dataset.category.toLowerCase();
+
+            const matchesSearch = productName.includes(searchText);
+
+            const matchesCategory =
+
+                selectedCategory === "all" ||
+
+                productCategory === selectedCategory;
+
+            if (matchesSearch && matchesCategory) {
+
+                product.style.display = "";
+
+                visibleProducts.push(product);
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+        const sortValue = priceSort.value;
+
+        if (sortValue === "low-high") {
+
+            visibleProducts.sort(function (a, b) {
+
+                return Number(a.dataset.price) - Number(b.dataset.price);
+
+            });
+
+        }
+
+        if (sortValue === "high-low") {
+
+            visibleProducts.sort(function (a, b) {
+
+                return Number(b.dataset.price) - Number(a.dataset.price);
+
+            });
+
+        }
+
+        visibleProducts.forEach(function (product) {
+
+            productGrid.appendChild(product);
+
+        });
+
+        productCount.textContent =
+
+            visibleProducts.length + " menu item(s) found.";
+
+        noResults.style.display =
+
+            visibleProducts.length === 0 ? "block" : "none";
+
+    }
+
+    searchInput.addEventListener("input", filterProducts);
+
+    categoryFilter.addEventListener("change", filterProducts);
+
+    priceSort.addEventListener("change", filterProducts);
+
+    filterProducts();
+
+});
+
+</script>
+
+</body>
+
+</html>
